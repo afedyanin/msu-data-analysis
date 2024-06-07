@@ -10,3 +10,6 @@
 - [Python for Finance cookbook](notebooks/books/python-for-finance-cookbook/python-for-finance-cookbook.md)
 - [Hands on Exploratory Data analysis with Python](notebooks/books/hands-on-exploratory-data-analysis-with-python/book-hands-on-exploratory-data-analysis-with-python.md)
 
+## Anaconda
+https://docs.anaconda.com/free/working-with-conda/ide-tutorials/pycharm/
+
