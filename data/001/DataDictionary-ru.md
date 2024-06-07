@@ -1,32 +1,32 @@
-SeriousDlqin2yrs    
+## SeriousDlqin2yrs    
 Произойдет ли просрочка платежа на 90 или более дней в ближайшие 2 года (Y/N)
 
-RevolvingUtilizationOfUnsecuredLines    
+## RevolvingUtilizationOfUnsecuredLines    
 Процент оставшихся денег на всех кредитных картах   (%)
 
-age 
+## age 
 Возраст (integer)
 
-NumberOfTime30-59DaysPastDueNotWorse    
+## NumberOfTime30-59DaysPastDueNotWorse    
 Количество кратковременных просрочек платежа (30-59 дней) за последние 2 года   (integer)
 
-DebtRatio   
+## DebtRatio   
 Выплачиваемые в месяц проценты от долга, алименты, бытовые расходы, деленные на месячный доход (если месячный доход неизвестен, то абсолютная величина выплат)  (%)
 
-MonthlyIncome   
+## MonthlyIncome   
 Месячный доход  (real)
 
-NumberOfOpenCreditLinesAndLoans 
+## NumberOfOpenCreditLinesAndLoans 
 Количество кредитов (или кредитных карт) за исключением ипотеки (integer)
 
-NumberOfTimes90DaysLate 
+## NumberOfTimes90DaysLate 
 Кредитная история: количество серьезных просрочек платежа на 90 дней или более (integer)
 
-NumberRealEstateLoansOrLines    
+## NumberRealEstateLoansOrLines    
 Количество ипотек   (integer)
 
-NumberOfTime60-89DaysPastDueNotWorse    
+## NumberOfTime60-89DaysPastDueNotWorse    
 Количество среднесрочных просрочек платежа (60-89 дней) за последние 2 года (integer)
 
-NumberOfDependents  
+## NumberOfDependents  
 Количество иждивенцев в семье, включая самого клиента   (integer)

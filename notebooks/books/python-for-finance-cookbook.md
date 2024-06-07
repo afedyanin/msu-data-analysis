@@ -74,6 +74,48 @@ Some of the alternatives they are using include:
 - Dollar bars—we sample a bar every time a predefined dollar amount is exchanged. Naturally, we can use any other currency of choice.
 
 
+## Chapter 4
+
+### Outlier detection using rolling statistics
+
+#### Winsorization
+Another popular approach for treating outliers is winsorization. It is based on replacing outliers in data to limit their effect on any potential calculations. 
+It’s easier to understand winsorization using an example. 
+A 90% winsorization results in replacing the top 5% of values with the 95th percentile. 
+Similarly, the bottom 5% is replaced using the value of the 5th percentile. 
+We can find the corresponding winsorize function in the scipy library.
+
+####  Hampel filter
+Its goal is to identify and potentially replace outliers in a given series. 
+It uses a centered sliding window of size 2x (given x observations before/after) to go over the entire series.
+For each of the sliding windows, the algorithm calculates the median and the median absolute deviation (a form of a standard deviation).
+
+Here are a few interesting anomaly/outlier detection libraries:
+• https://github.com/datamllab/tods
+• https://github.com/zillow/luminaire/
+• https://github.com/signals-dev/Orion
+• https://pycaret.org/anomaly-detection/
+• https://github.com/linkedin/luminol—a library created by LinkedIn; unfortunately, it is not actively maintained anymore
+• https://github.com/twitter/AnomalyDetection—this R package (created by Twitter) is quite famous and was ported to Python by some individual contributors
+
+### Detecting changepoints in time series
+
+We will use the CUSUM (cumulative sum) method to detect shifts of the means in a time series. The implementation used in the recipe has two steps:
+
+1. Finding the changepoint—an iterative process is started by first initializing a changepoint in the middle of the given time series. Then, the CUSUM approach is carried out based on the selected point. 
+The following changepoint is located where the previous CUSUM time series is either maximized or minimized (depending on the direction of the changepoint we want to locate). 
+We continue this process until a stable changepoint is located or we exceed the maximum number of iterations.
+
+2. Testing its statistical significance—a log-likelihood ratio test is used to test if the mean of the given time series changes at the identified changepoint. 
+The null hypothesis states that there is no change in the mean of the series.
+
+Some further remarks about the implementation of the algorithm:
+
+- The algorithm can be used to detect both upward and downward shifts.
+- The algorithm can find at most one upward and one downward changepoint.
+- By default, the changepoints are only reported if the null hypothesis is rejected.
+- Under the hood, the Gaussian distribution is used to calculate the CUSUM time series value and perform the hypothesis test.
+
 
 
 
